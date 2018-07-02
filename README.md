@@ -11,5 +11,15 @@ Doel van deze applicatie is het veilig stellen van de content van de site. Hoe g
 
 Hierna kan met een simpele angular front end de gegevens worden beheerd, en hoeft in principe ook geen database te worden gebruikt.
 
+Welke tools gebruiken we?
+
+- [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [visual studio code](https://code.visualstudio.com)
+- [npm en node.js, lts windows versie](https://nodejs.org/en)
+- [angular cli](https://cli.angular.io)
 
 
+Hoe weet je dat de tools goed zijn geinstalleerd
+
+- Start een powershell command: `ng<enter>` Er volgt een lijstje met mogelijke command's
+- Via powershell `code .`  Visual Studio Code start
