@@ -1,52 +1,69 @@
 <div *ngFor="let item of items">
-  
-  <div>
-    onderwerp:
-  </div>
-  <div>
-    {{ item.Onderwerp }}
-  </div>
+  <div class="container content">
 
-  <div>
-    teaser:
-  </div>
-  <div>
-    {{ item.Teaser }}
-  </div>
+    <div class="row">
+      <div class="col-md-2">
+        onderwerp
+      </div>
+      <div class="col-md-10">
+        {{ item.Onderwerp }}
+      </div>
+    </div>
 
-  <div>
-    Door:
-  </div>
-  <div>
-    {{ item.CreatedBy }}
-  </div>
+    <div class="row">
+      <div class="col-md-2">
+        teaser
+      </div>
+      <div class="col-md-10">
+        {{ item.Teaser }}
+      </div>
+    </div>
 
-  <div>
-    Datum:
-  </div>
-  <div>
-    {{ item.CreateDate | date:"dd MMM yyyy" }}
-  </div>
+    <div class="row">
+      <div class="col-md-2">
+        CreatedBy
+      </div>
+      <div class="col-md-10">
+        {{ item.CreateDate | date:"dd MMM yyyy" }}
+      </div>
+    </div>
 
-  <div>
-    Tekst:
-  </div>
-  <div>
-    {{ item.Body }}
-  </div>
+    <div class="row">
+      <div class="col-md-2">
+        CreateDate
+      </div>
+      <div class="col-md-10">
+        {{ item.CreatedBy }}
+      </div>
+    </div>
 
-  <div>
-    Foto's:
-  </div>
-  <div *ngFor="let image of item.Images">
-    {{ image.Naam }}
-  </div>
+    <div class="row">
+      <div class="col-md-2">
+        Tekst
+      </div>
+      <div class="col-md-10" [innerHTML] = "item.Body">
+      </div>
+    </div>
 
-  <div>
-    tags:
-  </div>
-  <div>
-    {{ item.Tags }}
-  </div>
+    <div class="row">
+      <div class="col-md-2">
+        Foto's
+      </div>
+      <div class="col-md-10">
+          <div *ngFor="let image of item.Images">
+              {{ image.Naam }}
+            </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-md-2">
+        tags
+      </div>
+      <div class="col-md-10">
+          {{ item.Tags }}
+      </div>
+    </div>
+    
+  </div>
 </div>
