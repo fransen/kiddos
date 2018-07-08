@@ -8,12 +8,14 @@ import { ItemService } from '../../Services/item.service';
 })
 export class ItemsComponent implements OnInit {
   
+  randomItem;
   items;
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    this.getItems();
+    // this.getItems();
+    this.getRandomItem();
   }
 
   getItems(): void {
@@ -25,4 +27,15 @@ export class ItemsComponent implements OnInit {
           error => console.log(error)
         )
   }
+
+  getRandomItem(): void {
+    this.itemService.getItems()
+    .subscribe(
+      data => {
+        this.randomItem = data[Math.floor(Math.random() * data.length)];
+      },
+      error => console.log(error)
+    )
+  }
+
 }

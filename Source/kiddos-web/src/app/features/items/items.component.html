@@ -1,39 +1,39 @@
-<div *ngFor="let item of items">
-  <div class="container content">
+<div class="container content">
+  <!-- <div *ngFor="let randomItem of randomItems"> -->
 
     <div class="row">
       <div class="col-md-2">
         onderwerp
       </div>
       <div class="col-md-10">
-        {{ item.Onderwerp }}
+        {{ randomItem.Onderwerp }}
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-none d-sm-block">
       <div class="col-md-2">
         teaser
       </div>
       <div class="col-md-10">
-        {{ item.Teaser }}
+        {{ randomItem.Teaser }}
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-none d-sm-block">
       <div class="col-md-2">
         CreatedBy
       </div>
       <div class="col-md-10">
-        {{ item.CreateDate | date:"dd MMM yyyy" }}
+        {{ randomItem.CreateDate | date:"dd MMM yyyy" }}
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-none d-md-block">
       <div class="col-md-2">
         CreateDate
       </div>
       <div class="col-md-10">
-        {{ item.CreatedBy }}
+        {{ randomItem.CreatedBy }}
       </div>
     </div>
 
@@ -41,7 +41,7 @@
       <div class="col-md-2">
         Tekst
       </div>
-      <div class="col-md-10" [innerHTML] = "item.Body">
+      <div class="col-md-10" [innerHTML]="randomItem.Body">
       </div>
     </div>
 
@@ -50,20 +50,22 @@
         Foto's
       </div>
       <div class="col-md-10">
-          <div *ngFor="let image of item.Images">
-              {{ image.Naam }}
-            </div>
+        <div *ngFor="let image of randomItem.Images">
+          {{ image.Naam }}
+        </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-none d-md-block">
       <div class="col-md-2">
         tags
       </div>
       <div class="col-md-10">
-          {{ item.Tags }}
+        {{ randomItem.Tags }}
       </div>
     </div>
-    
-  </div>
+
+    <button (click)="getRandomItem()">Volgende</button>
+
+  <!-- </div> -->
 </div>
