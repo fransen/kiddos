@@ -1,4 +1,4 @@
-export class Image {
+export interface Image {
     Index: number;
     Naam: string;
 }

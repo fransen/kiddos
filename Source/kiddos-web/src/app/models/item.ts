@@ -1,7 +1,7 @@
 import { Image } from "./image";
 import { Document } from "./document";
 
-export class Item{
+export interface Item{
     id: number;
     onderwerp: string;
     teaser: string;

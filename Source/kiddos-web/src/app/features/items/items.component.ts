@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../Services/item.service';
 import { Item } from '../../models/item';
+import { Image } from "../../models/image";
+import { Document } from "../../models/document";
 
 @Component({
   selector: 'app-items',
@@ -9,46 +11,41 @@ import { Item } from '../../models/item';
 })
 export class ItemsComponent implements OnInit {
   
-  items;
-  item;
+  items: Item[] = [];
+  teller: number = -1;
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    this.getItems();
-    //this.getRandomItem();
-    //this.getItem(100);
+    this.getItem();
   }
 
-  getItems(): void {
-      this.itemService.getItems()
-        .subscribe(
-          data => {
-            this.items = data;
-          },
-          error => console.log(error)
-        )
-  }
+  getItem(): void {
+    this.items = [];
 
-  getItem(id: number): void {
     this.itemService.getItems()
     .subscribe(
       data => {
-        this.item = data[id];
-        console.log(this.item);
+        this.getTeller(data.length);
+        this.items.push(data[this.teller]);
       },
       error => console.log(error)
     )
   }
 
-  getRandomItem(): void {
-    this.itemService.getItems()
-    .subscribe(
-      data => {
-        this.item = data[Math.floor(Math.random() * data.length)];
-        console.log(this.item);
-      },
-      error => console.log(error)
-    )
+  getTeller(maximaalAantal) {
+    if(this.teller == -1) {
+      this.getRandom(maximaalAantal)
+    }
+
+    this.teller = this.teller + 1;
+
+    if( this.teller == maximaalAantal.length ) {
+      this.teller = 0;
+    }
+  }
+
+  getRandom(maximaalAantal) {
+    this.teller = Math.floor(Math.random() * maximaalAantal);
   }
 }

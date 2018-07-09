@@ -1,4 +1,11 @@
-<div class="container content">
+<div *ngFor="let item of items">
+  {{ item.Onderwerp }}
+  <div *ngFor="let image of item.Images">
+    {{ image.Naam }}
+  </div>
+</div>
+<button (click)="getItem()">Volgende</button>
+<!-- <div class="container content">
   <div *ngFor="let item of items">
 
     <div class="row">
@@ -65,6 +72,6 @@
       </div>
     </div>
 
-    <button (click)="getItem(101)">Volgende</button>
+    
   </div>
-</div>
+</div> -->
