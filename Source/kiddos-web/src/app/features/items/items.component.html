@@ -1,12 +1,12 @@
 <div class="container content">
-  <!-- <div *ngFor="let randomItem of randomItems"> -->
+  <div *ngFor="let item of items">
 
     <div class="row">
       <div class="col-md-2">
         onderwerp
       </div>
       <div class="col-md-10">
-        {{ randomItem.Onderwerp }}
+        {{ item.Onderwerp }}
       </div>
     </div>
 
@@ -15,7 +15,7 @@
         teaser
       </div>
       <div class="col-md-10">
-        {{ randomItem.Teaser }}
+        {{ item.Teaser }}
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         CreatedBy
       </div>
       <div class="col-md-10">
-        {{ randomItem.CreateDate | date:"dd MMM yyyy" }}
+        {{ item.CreateDate | date:"dd MMM yyyy" }}
       </div>
     </div>
 
@@ -33,7 +33,7 @@
         CreateDate
       </div>
       <div class="col-md-10">
-        {{ randomItem.CreatedBy }}
+        {{ item.CreatedBy }}
       </div>
     </div>
 
@@ -41,7 +41,7 @@
       <div class="col-md-2">
         Tekst
       </div>
-      <div class="col-md-10" [innerHTML]="randomItem.Body">
+      <div class="col-md-10" [innerHTML]="item.Body">
       </div>
     </div>
 
@@ -50,7 +50,7 @@
         Foto's
       </div>
       <div class="col-md-10">
-        <div *ngFor="let image of randomItem.Images">
+        <div *ngFor="let image of item.Images">
           {{ image.Naam }}
         </div>
       </div>
@@ -61,11 +61,10 @@
         tags
       </div>
       <div class="col-md-10">
-        {{ randomItem.Tags }}
+        {{ item.Tags }}
       </div>
     </div>
 
-    <button (click)="getRandomItem()">Volgende</button>
-
-  <!-- </div> -->
+    <button (click)="getItem(101)">Volgende</button>
+  </div>
 </div>

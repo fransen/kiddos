@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../Services/item.service';
+import { Item } from '../../models/item';
 
 @Component({
   selector: 'app-items',
@@ -8,14 +9,15 @@ import { ItemService } from '../../Services/item.service';
 })
 export class ItemsComponent implements OnInit {
   
-  randomItem;
   items;
+  item;
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    // this.getItems();
-    this.getRandomItem();
+    this.getItems();
+    //this.getRandomItem();
+    //this.getItem(100);
   }
 
   getItems(): void {
@@ -28,14 +30,25 @@ export class ItemsComponent implements OnInit {
         )
   }
 
-  getRandomItem(): void {
+  getItem(id: number): void {
     this.itemService.getItems()
     .subscribe(
       data => {
-        this.randomItem = data[Math.floor(Math.random() * data.length)];
+        this.item = data[id];
+        console.log(this.item);
       },
       error => console.log(error)
     )
   }
 
+  getRandomItem(): void {
+    this.itemService.getItems()
+    .subscribe(
+      data => {
+        this.item = data[Math.floor(Math.random() * data.length)];
+        console.log(this.item);
+      },
+      error => console.log(error)
+    )
+  }
 }
