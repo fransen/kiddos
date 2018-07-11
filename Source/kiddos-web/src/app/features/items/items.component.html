@@ -1,22 +1,27 @@
 <div class="container">
+
+
   <div *ngFor="let item of items">
+
+    <div class="jumbotron">
+      <h1 class="display-3">{{ item.Onderwerp }}</h1>
+      <p class="lead"></p>
+      <hr class="my-2">
+      <p>{{ item.Teaser }}</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" (click)="getItem()" role="button">volgende</a>
+      </p>
+    </div>
+
     <div class="row">
-      <div class="col-sm">
-        {{ item.Onderwerp }}
-      </div>
-      <div class="col-sm">
-        {{ item.Body }}
+
+      <div class="col-sm" [innerHTML]="item.Body">
       </div>
       <div class="col-sm d-sx-none d-md-block">
         <div *ngFor="let image of item.Images">
           {{ image.Naam }}
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col" shadow-lg p-3 mb-5 bg-white rounded>
-      <button (click)="getItem()">Volgende</button>
     </div>
   </div>
 </div>
