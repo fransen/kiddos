@@ -1,0 +1,93 @@
+<div class="container">
+  <div *ngFor="let item of items">
+    <div class="row">
+      <div class="col-sm">
+        {{ item.Onderwerp }}
+      </div>
+      <div class="col-sm">
+        {{ item.Body }}
+      </div>
+      <div class="col-sm d-sx-none d-md-block">
+        <div *ngFor="let image of item.Images">
+          {{ image.Naam }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" shadow-lg p-3 mb-5 bg-white rounded>
+      <button (click)="getItem()">Volgende</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container content">
+  <div *ngFor="let item of items">
+
+    <div class="row">
+      <div class="col-md-2">
+        onderwerp
+      </div>
+      <div class="col-md-10">
+        {{ item.Onderwerp }}
+      </div>
+    </div>
+
+    <div class="row d-none d-sm-block">
+      <div class="col-md-2">
+        teaser
+      </div>
+      <div class="col-md-10">
+        {{ item.Teaser }}
+      </div>
+    </div>
+
+    <div class="row d-none d-sm-block">
+      <div class="col-md-2">
+        CreatedBy
+      </div>
+      <div class="col-md-10">
+        {{ item.CreateDate | date:"dd MMM yyyy" }}
+      </div>
+    </div>
+
+    <div class="row d-none d-md-block">
+      <div class="col-md-2">
+        CreateDate
+      </div>
+      <div class="col-md-10">
+        {{ item.CreatedBy }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        Tekst
+      </div>
+      <div class="col-md-10" [innerHTML]="item.Body">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        Foto's
+      </div>
+      <div class="col-md-10">
+        <div *ngFor="let image of item.Images">
+          {{ image.Naam }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-none d-md-block">
+      <div class="col-md-2">
+        tags
+      </div>
+      <div class="col-md-10">
+        {{ item.Tags }}
+      </div>
+    </div>
+
+    
+  </div>
+</div> -->
