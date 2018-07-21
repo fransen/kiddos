@@ -1,0 +1,14 @@
+@import "./../../../sass/-variables";
+.nav {
+    background-color: $primary;
+    height: 80px;
+    font-family: $fredoka-cursive;
+    //font-weight: 700;
+    font-size: 48px;
+    color: white;
+    padding-top: 5px;
+
+    .dot {
+        color: $secondary;
+    }
+}

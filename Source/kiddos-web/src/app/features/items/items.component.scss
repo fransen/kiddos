@@ -1,0 +1,17 @@
+@import "./../../../sass/-variables";
+
+h1 {
+    height: 80px;
+    font-family: $amatic-cursive;
+    font-size: 48px;
+    color: $secondary;
+
+}
+
+.image{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin: 0 15px 15px 0;
+
+}

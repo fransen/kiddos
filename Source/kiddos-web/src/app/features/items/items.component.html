@@ -1,28 +1,28 @@
 <div class="container">
-
-
   <div *ngFor="let item of items">
 
-    <div class="jumbotron">
-      <h1 class="display-3">dev: {{ item.Onderwerp }}</h1>
-      <p class="lead"></p>
-      <hr class="my-2">
-      <p>{{ item.Teaser }}</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" (click)="getItem()" role="button">volgende</a>
-      </p>
+    <div class="row">
+      <div class="col">
+        <h1>{{ item.Onderwerp }}</h1>
+      </div>
     </div>
 
     <div class="row">
-
-      <div class="col-sm" [innerHTML]="item.Body">
-      </div>
-      <div class="col-sm d-sx-none d-md-block">
-        <div *ngFor="let image of item.Images">
-          {{ image.Naam }}
-        </div>
+      <div *ngFor="let image of item.Images" class="col">
+        <div class="image"></div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+        <div [innerHTML]="item.Body"></div>
+      </div>
+    </div>
+
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" (click)="getItem()" role="button">volgende</a>
+    </p>
+
   </div>
 </div>
 

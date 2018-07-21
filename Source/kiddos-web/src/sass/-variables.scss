@@ -1,0 +1,21 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// kleuren
+$primary: #320A4D;
+$secondary: #0AF3CD;
+$success: #2ecc71;
+$danger: #e74c3c;
+
+
+
+// fonts: https://fonts.google.com/
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Fredoka+One');
+$amatic-cursive: 'Amatic SC', cursive;
+$fredoka-cursive: 'Fredoka One', cursive;
+
