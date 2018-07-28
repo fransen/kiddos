@@ -10,6 +10,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+.navigation {
+    margin-bottom: 20px;
+    a {
+        padding-right: 10px;
+    }
+}
+
 .profiel {
     color: $primary;
     margin-bottom: 20px;
@@ -33,7 +40,7 @@ h1 {
     position: relative;
     margin: 0 15px 15px 0;
     float: left;
-    img{
+    img {
         position: absolute;
         left: -1000%;
         right: -1000%;
@@ -41,7 +48,7 @@ h1 {
         bottom: -1000%;
         margin: auto;
         min-height: 100%;
-        min-width: 100%;  
+        min-width: 100%;
     }
 }
 

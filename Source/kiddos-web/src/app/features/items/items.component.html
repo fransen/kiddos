@@ -14,6 +14,14 @@
     </div>
 
     <div class="row">
+      <div class="col navigation">
+        <a href="#" (click)="getVorige()">vorige</a>
+        <a href="#" (click)="getVolgende()">volgende</a>
+        <a href="#" (click)="getRandom()" >random</a>  
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col images">
         <div *ngFor="let image of item.Images" class="image">
           <img src="../../images/{{ image.Naam }}">
@@ -26,12 +34,6 @@
         <div [innerHTML]="item.Body"></div>
       </div>
     </div>
-
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" (click)="getVolgende()" role="button">volgende</a>
-      <a class="btn btn-primary btn-lg" (click)="getVorige()" role="button">vorige</a>
-      <a class="btn btn-primary btn-lg" (click)="getRandom()" role="button">random</a>
-    </p>
 
   </div>
 </div>
