@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../Services/item.service';
+import { fadeInAnimation } from '../../animations/fade-in.animation';
 import { Item } from '../../models/item';
-import { Image } from "../../models/image";
-import { Document } from "../../models/document";
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.scss']
+  styleUrls: ['./items.component.scss'],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': ''}
 })
 export class ItemsComponent implements OnInit {
   
   items: Item[] = [];
   teller: number = -1;
+  animationState = 'in';
 
   constructor(private itemService: ItemService) { }
 
