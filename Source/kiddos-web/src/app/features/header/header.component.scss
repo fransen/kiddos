@@ -1,4 +1,6 @@
-@import "./../../../sass/-variables";
+@import "./../../../sass/_variables";
+@import '~bootstrap/scss/bootstrap-grid';
+
 .nav {
     background-color: $primary;
     height: 80px;
@@ -7,6 +9,10 @@
     font-size: 48px;
     color: white;
     padding-top: 5px;
+    @include media-breakpoint-down(sm) {
+        height: 50px;    
+        font-size: 32px;
+    }
 
     .dot {
         color: $secondary;

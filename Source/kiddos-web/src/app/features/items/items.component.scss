@@ -1,9 +1,15 @@
-@import "./../../../sass/-variables";
+@import "./../../../sass/_variables";
+@import '~bootstrap/scss/bootstrap-grid';
+
 h1 {
     height: 80px;
     font-family: $amatic-cursive;
     font-size: 48px;
     color: $secondary;
+    @include media-breakpoint-down(sm) {
+        height: 30px;    
+        font-size: 32px;
+    }
 }
 
 .onderwerp {
