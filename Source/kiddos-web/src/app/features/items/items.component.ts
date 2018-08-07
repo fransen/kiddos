@@ -26,9 +26,8 @@ export class ItemsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.teller = +params.get('id');
-      
-
-      this.getItem(this.teller);
+      let direction =  params.get('direction');
+      this.getItem(this.getDirection(direction));
     });
   }
 
@@ -42,6 +41,23 @@ export class ItemsComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  getDirection(direction) : number {
+
+    console.log("direction:" + direction );
+
+    switch(direction) { 
+      case "volgende": { 
+          return 1;
+      } 
+      case "vorige": { 
+          return -1;
+      }
+      default: { 
+          return 1;
+      } 
+    } 
   }
 
   getTeller(maximaalAantal, index) : void {
