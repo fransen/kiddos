@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ItemService } from '../../Services/item.service';
 import { fadeInAnimation } from '../../animations/fade-in.animation';
 import { Item } from '../../models/item';
+
 
 @Component({
   selector: 'app-items',
@@ -16,28 +18,22 @@ export class ItemsComponent implements OnInit {
   teller: number = -1;
   animationState = 'in';
 
-  constructor(private itemService: ItemService) { }
+  constructor(
+    private itemService: ItemService, 
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    this.getRandom();
-  }
+    this.route.paramMap.subscribe(params => {
+      this.teller = +params.get('id');
+      
 
-  getVolgende(): void {
-    this.getItem(1);
-  }
-
-  getVorige(): void {
-    this.getItem(-1);
-  }
-
-  getRandom(): void {
-    this.teller = -1;
-    this.getItem(1);
+      this.getItem(this.teller);
+    });
   }
 
   getItem(index): void {
     this.items = [];
-
     this.itemService.getItems()
     .subscribe(
       data => {
@@ -48,19 +44,20 @@ export class ItemsComponent implements OnInit {
     )
   }
 
-  getTeller(maximaalAantal, index) {
+  getTeller(maximaalAantal, index) : void {
     if(this.teller == -1) {
-      this.getRandomVanAantalItems(maximaalAantal)
+      this.teller = Math.floor(Math.random() * maximaalAantal);
     }
 
-    this.teller = this.teller + index;
+    this.teller =  this.teller + index;
 
     if( this.teller == maximaalAantal.length ) {
       this.teller = 0;
     }
-  }
 
-  getRandomVanAantalItems(maximaalAantal) {
-    this.teller = Math.floor(Math.random() * maximaalAantal);
+    console.log("index:" + index );
+    console.log("teller:" + this.teller );
+
+
   }
 }

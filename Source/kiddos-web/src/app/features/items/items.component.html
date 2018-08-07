@@ -15,9 +15,9 @@
 
     <div class="row">
       <div class="col navigation">
-        <a href="#" (click)="getVorige()">vorige</a>
-        <a href="#" (click)="getVolgende()">volgende</a>
-        <a href="#" (click)="getRandom()" >random</a>  
+        <a routerLink="/items/{{ teller }}/vorige">vorige</a> 
+        <a routerLink="/items/{{ teller }}/volgende">volgende</a> 
+        <a routerLink="/items/-1">random</a> 
       </div>
     </div>
 
