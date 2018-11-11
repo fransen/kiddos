@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemService } from '../../Services/item.service';
-import { fadeInAnimation } from '../../animations/fade-in.animation';
-import { Item } from '../../models/item';
+import { slideToLeft } from '../../animations/slide-to-left.animation';
+import { Item } from '../../models/item'; 
 
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss'],
-  animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': ''}
+  animations: [slideToLeft],
+  host: { '[@slideToLeft]': ''}
 })
 export class ItemsComponent implements OnInit {
   
