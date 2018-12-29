@@ -26,7 +26,7 @@ Hoe weet je dat de tools goed zijn geinstalleerd
 
 ### Oplossingen
 
-Animation over de dezelfde route
+Animation over dezelfde route
 
 https://medium.com/frontend-coach/angular-router-animations-what-they-dont-tell-you-3d2737a7f20b
 
