@@ -23,3 +23,11 @@ Hoe weet je dat de tools goed zijn geinstalleerd
 
 - Start een powershell command: `ng<enter>` Er volgt een lijstje met mogelijke command's
 - Via powershell `code .`  Visual Studio Code start
+
+### Oplossingen
+
+Animation over de dezelfde route
+
+https://medium.com/frontend-coach/angular-router-animations-what-they-dont-tell-you-3d2737a7f20b
+
+
